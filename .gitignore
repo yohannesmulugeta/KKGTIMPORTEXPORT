@@ -1,0 +1,8 @@
+node_modules/
+dist/
+output/playwright/
+/tmp/
+.playwright-cli/
+.vite/
+*.local
+.DS_Store

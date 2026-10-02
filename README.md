@@ -26,7 +26,7 @@ npm.cmd run preview -- --host 127.0.0.1 --port 4181
 - `src/pages/`: corporate home, company, coffee, commodities, agrochemicals, trading, quality, process, gallery, contact, and detail routes
 - `src/data/`: company and product content
 - `src/components/`: navigation, reusable page components, and coffee journey
-- `assets/`: supplied KKGT logo and original catalogue sprites; the site now uses extracted pack images in `public/assets/products/`
+- `assets/`: original supplied KKGT logo and catalogue sprites; the site uses a transparent logo in `public/media/` and extracted pack images in `public/assets/products/`
 - `public/media/`: local coffee visuals, illustrative commodity images, and a supplied-catalogue field image
 - `DATA_REQUIRED.md`: facts, media, and connections still needing KKGT confirmation
 - `CONTENT_SOURCES.md`: source references and publication notes

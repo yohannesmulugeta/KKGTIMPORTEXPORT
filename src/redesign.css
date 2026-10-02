@@ -16,6 +16,8 @@ h1, h2, h3 { text-wrap: balance; }
 .site-header .nav-bar { min-height: 72px; padding: 8px 16px; border: 1px solid rgba(12, 62, 38, .08); border-radius: 18px; background: rgba(255,255,255,.96); box-shadow: 0 12px 38px rgba(20, 51, 34, .11); backdrop-filter: blur(15px); }
 .site-header .logo-lockup { width: 138px; box-shadow: none; padding: 0; border-radius: 0; }
 .site-header .logo-lockup img { max-height: 48px; }
+.logo-lockup, .site-header .logo-lockup { background: transparent; box-shadow: none; padding: 0; border-radius: 0; }
+.site-footer .logo-lockup img { filter: brightness(0) invert(1); }
 .site-header:not(.is-menu-open) .nav-link, .site-header:not(.is-menu-open) .nav-link--button, .site-header:not(.is-menu-open) .nav-cta { color: var(--ink); }
 .site-header:not(.is-scrolled):not(.is-menu-open) .nav-link { color: var(--ink); }
 .site-header:not(.is-menu-open) .nav-link.active { color: var(--green); }

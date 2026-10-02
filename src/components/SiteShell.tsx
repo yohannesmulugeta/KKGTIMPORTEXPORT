@@ -2,8 +2,10 @@ import { Suspense, useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowUpRight, Menu, X } from 'lucide-react';
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
-import logoUrl from '../../assets/kkgt-logo.svg';
+import { assetUrl } from '../data/assetUrl';
 import { company } from '../data/company';
+
+const logoUrl = assetUrl('/media/kkgt-logo-transparent.png');
 
 const primaryLinks = [
   ['About', '/about'],

@@ -7,12 +7,18 @@ const isGitHubPages = process.argv.includes('--github-pages');
 const productionSite = 'https://kkgtimportexport.com';
 const siteBase = isGitHubPages ? 'https://yohannesmulugeta.github.io/KKGTIMPORTEXPORT' : productionSite;
 
+const socialPreviewBase64 = Array.from({ length: 3 }, (_, index) =>
+  readFileSync(resolve(projectRoot, `scripts/social-assets/import-social-final.part${index}.b64`), 'utf8').trim(),
+).join('');
+mkdirSync(resolve(outputRoot, 'media'), { recursive: true });
+writeFileSync(resolve(outputRoot, 'media/social-preview.jpg'), Buffer.from(socialPreviewBase64, 'base64'));
+
 const sitemapPath = resolve(outputRoot, 'sitemap.xml');
 let sitemap = readFileSync(sitemapPath, 'utf8');
 const baseHtml = readFileSync(resolve(outputRoot, 'index.html'), 'utf8');
 
 const staticMeta = {
-  '/': ['KKGT Import Export | Ethiopia Coffee, Commodities & Agrochemicals', 'KKGT Import Export connects Ethiopian coffee, agricultural commodities, crop-protection products and trading opportunities with local and international markets.', '/media/ethiopian-highlands.webp'],
+  '/': ['KKGT Import Export | Ethiopia Coffee, Commodities & Agrochemicals', 'KKGT Import Export connects Ethiopian coffee, agricultural commodities, crop-protection products and trading opportunities with local and international markets.', '/media/social-preview.jpg'],
   '/about': ['About KKGT Import Export | Ethiopia', 'Learn about KKGT Import Export, an Ethiopian trading company working across coffee, agricultural commodities, agrochemicals and import and trading activities.', '/media/ethiopian-highlands.webp'],
   '/coffee': ['Ethiopian Coffee Export | KKGT Import Export', 'Explore KKGT’s Ethiopian coffee origins and start a direct conversation about current green coffee availability, specifications and export requirements.', '/media/coffee-cherries.webp'],
   '/commodities': ['Ethiopian Agricultural Commodities | KKGT Import Export', 'Explore KKGT’s agricultural commodity portfolio, including sesame, soybeans, pulses and beans for local and international trading opportunities.', '/media/commodities-illustrative.png'],

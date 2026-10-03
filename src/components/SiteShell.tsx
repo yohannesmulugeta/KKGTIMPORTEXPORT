@@ -5,7 +5,7 @@ import { Link, NavLink, Outlet, useLocation } from 'react-router-dom';
 import { assetUrl } from '../data/assetUrl';
 import { company } from '../data/company';
 
-const logoUrl = assetUrl('/media/kkgt-logo-transparent.png');
+const logoUrl = assetUrl('/media/kkgt-logo.svg');
 
 const primaryLinks = [
   ['About', '/about'],

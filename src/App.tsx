@@ -1,6 +1,7 @@
 import { lazy } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { SiteShell } from './components/SiteShell';
+import { SeoManager } from './components/SeoManager';
 
 const Home = lazy(() => import('./pages/Home').then((module) => ({ default: module.Home })));
 const About = lazy(() => import('./pages/About').then((module) => ({ default: module.About })));
@@ -19,7 +20,9 @@ const NotFound = lazy(() => import('./pages/NotFound').then((module) => ({ defau
 
 export default function App() {
   return (
-    <Routes>
+    <>
+      <SeoManager />
+      <Routes>
       <Route element={<SiteShell />}>
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
@@ -44,6 +47,7 @@ export default function App() {
         <Route path="contact-us" element={<Navigate to="/contact" replace />} />
         <Route path="*" element={<NotFound />} />
       </Route>
-    </Routes>
+      </Routes>
+    </>
   );
 }

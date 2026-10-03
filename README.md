@@ -1,6 +1,20 @@
-# KKGT main website
+# KKGT Import Export — Website Source Code
 
-KKGT Import Export main website. This is the source for the [`KKGTIMPORTEXPORT` repository](https://github.com/yohannesmulugeta/KKGTIMPORTEXPORT). Local development serves from `/`; the GitHub Pages build serves from `/KKGTIMPORTEXPORT/`.
+> **Official website:** https://kkgtimportexport.com/
+
+This repository contains the source code for the official **KKGT Import Export** website.  
+For company information, coffee, agricultural commodities, agrochemicals, import and trading inquiries, visit **https://kkgtimportexport.com/**.
+
+The GitHub repository is for website development and version control; it is **not the primary public website**.
+
+## Technology
+
+- React
+- Vite
+- TypeScript
+- React Router
+- Framer Motion
+- Cloudflare production deployment
 
 ## Run locally
 
@@ -21,27 +35,23 @@ npm.cmd run build
 npm.cmd run preview -- --host 127.0.0.1 --port 4181
 ```
 
-## Structure
+## Website structure
 
-- `src/pages/`: corporate home, company, coffee, commodities, agrochemicals, trading, quality, process, gallery, contact, and detail routes
-- `src/data/`: company and product content
-- `src/components/`: navigation, reusable page components, and coffee journey
-- `assets/`: original supplied KKGT logo and catalogue sprites; the site uses a transparent logo in `public/media/` and extracted pack images in `public/assets/products/`
-- `public/media/`: local coffee visuals, illustrative commodity images, and a supplied-catalogue field image
-- `DATA_REQUIRED.md`: facts, media, and connections still needing KKGT confirmation
-- `CONTENT_SOURCES.md`: source references and publication notes
+- `src/pages/` — corporate home, company, coffee, commodities, agrochemicals, trading, quality, process, gallery, contact, and detail routes
+- `src/data/` — company and product content
+- `src/components/` — navigation and reusable site components
+- `public/media/` — optimized website media and branding assets
+- `public/sitemap.xml` — production XML sitemap
+- `public/robots.txt` — crawler directives
 
-## Publish
+## Production
 
-Push to `main` to run `.github/workflows/deploy.yml`. The workflow builds with:
+The public production domain is:
 
-```powershell
-npm.cmd ci
-npm.cmd run build:pages
-```
+**https://kkgtimportexport.com/**
 
-The expected Pages URL is `https://yohannesmulugeta.github.io/KKGTIMPORTEXPORT/`. GitHub Pages must use **GitHub Actions** as its publishing source in the repository settings. The custom domain `kkgtimportexport.com` requires separate DNS and Pages configuration; it is not configured in this repository.
+Changes pushed to `main` are built and deployed through the project's connected deployment workflow. Search engines and customers should use the production domain above rather than a GitHub URL.
 
-The contact form validates entries and opens an email draft. It does not deliver a message from the site. The old public domain did not resolve from this environment during the rebuild; indexed public pages and available KKGT catalogue content informed the site. Current records and media rights still need KKGT review.
+## Contact behavior
 
-Known old public paths (`/about-us/`, `/services/`, `/working-process/`, `/meet-our-team/`, and `/contact-us/`) redirect within the local app. The `motion-dom` and `motion-utils` versions are pinned in `package.json` because newer offline-resolved releases failed this project's Framer Motion build.
+The website contact flow validates visitor input and prepares an email draft. It does not store submitted inquiry data in this repository.

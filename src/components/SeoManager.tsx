@@ -20,6 +20,7 @@ const fixedMeta: Record<string, SeoMeta> = {
   '/about': {
     title: 'About KKGT Import Export | Ethiopia',
     description: 'Learn about KKGT Import Export, an Ethiopian trading company working across coffee, agricultural commodities, agrochemicals and import and trading activities.',
+    image: `${SITE_URL}/media/kkgt-supplied/office-portrait.webp`,
   },
   '/coffee': {
     title: 'Ethiopian Coffee Export | KKGT Import Export',
@@ -34,26 +35,27 @@ const fixedMeta: Record<string, SeoMeta> = {
   '/agrochemicals': {
     title: 'Agrochemicals & Crop Protection | KKGT Import Export',
     description: 'Browse KKGT crop-protection products by category and review published product information for herbicides, fungicides and insecticides.',
-    image: `${SITE_URL}/media/catalogue-field.webp`,
+    image: `${SITE_URL}/media/kkgt-supplied/field-group.webp`,
   },
   '/agrochemicals/herbicides': {
     title: 'Herbicides | KKGT Agrochemicals',
     description: 'Browse herbicide products in KKGT’s published crop-protection catalogue and review product-specific active ingredient and use information.',
-    image: `${SITE_URL}/media/catalogue-field.webp`,
+    image: `${SITE_URL}/media/kkgt-supplied/field-group.webp`,
   },
   '/agrochemicals/fungicides': {
     title: 'Fungicides | KKGT Agrochemicals',
     description: 'Browse fungicide products in KKGT’s published crop-protection catalogue and review product-specific active ingredient and use information.',
-    image: `${SITE_URL}/media/catalogue-field.webp`,
+    image: `${SITE_URL}/media/kkgt-supplied/field-group.webp`,
   },
   '/agrochemicals/insecticides': {
     title: 'Insecticides | KKGT Agrochemicals',
     description: 'Browse insecticide products in KKGT’s published crop-protection catalogue and review product-specific active ingredient and use information.',
-    image: `${SITE_URL}/media/catalogue-field.webp`,
+    image: `${SITE_URL}/media/kkgt-supplied/field-group.webp`,
   },
   '/trading': {
     title: 'Import & Trading | KKGT Import Export',
     description: 'Explore KKGT’s import and trading activities supported by Ethiopian market knowledge and commercial coordination.',
+    image: `${SITE_URL}/media/trading/trading-hero.webp`,
   },
   '/quality': {
     title: 'Quality & Operations | KKGT Import Export',
@@ -65,7 +67,13 @@ const fixedMeta: Record<string, SeoMeta> = {
   },
   '/gallery': {
     title: 'Gallery | KKGT Import Export',
-    description: 'Explore visual highlights from KKGT Import Export and its coffee, commodities, agrochemical and trading activities.',
+    description: 'Explore field and office photographs supplied by KKGT Import Export.',
+    image: `${SITE_URL}/media/kkgt-supplied/field-inspection.webp`,
+  },
+  '/awards': {
+    title: 'Awards & Recognition | KKGT Import Export',
+    description: 'View recognition photographs supplied by KKGT Import Export.',
+    image: `${SITE_URL}/media/kkgt-supplied/recognition-trophy.webp`,
   },
   '/contact': {
     title: 'Contact KKGT Import Export | Addis Ababa, Ethiopia',
@@ -85,6 +93,12 @@ function absoluteUrl(value?: string) {
   } catch {
     return DEFAULT_IMAGE;
   }
+}
+
+function imageMime(url: string) {
+  if (/\.webp(?:\?|$)/i.test(url)) return 'image/webp';
+  if (/\.png(?:\?|$)/i.test(url)) return 'image/png';
+  return 'image/jpeg';
 }
 
 function getMeta(pathname: string): SeoMeta {
@@ -173,6 +187,14 @@ export function SeoManager() {
     setMeta('property', 'og:site_name', 'KKGT Import Export');
     setMeta('property', 'og:url', canonical);
     setMeta('property', 'og:image', image);
+    setMeta('property', 'og:image:type', imageMime(image));
+    if (image !== DEFAULT_IMAGE) {
+      document.head.querySelector('meta[property="og:image:width"]')?.remove();
+      document.head.querySelector('meta[property="og:image:height"]')?.remove();
+    } else {
+      setMeta('property', 'og:image:width', '1200');
+      setMeta('property', 'og:image:height', '630');
+    }
     setMeta('property', 'og:image:alt', 'KKGT Import Export');
     setMeta('name', 'twitter:card', 'summary_large_image');
     setMeta('name', 'twitter:title', meta.title);

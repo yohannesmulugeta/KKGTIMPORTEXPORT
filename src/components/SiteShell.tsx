@@ -6,6 +6,7 @@ import { assetUrl } from '../data/assetUrl';
 import { company } from '../data/company';
 
 const logoUrl = assetUrl('/media/kkgt-logo.svg');
+const footerLogoUrl = assetUrl('/media/kkgt-logo-transparent.png');
 
 const primaryLinks = [
   ['About', '/about'],
@@ -33,7 +34,7 @@ const mobileLinks = [
 ] as const;
 
 function Logo({ inverted = false }: { inverted?: boolean }) {
-  return <span className={`logo-lockup ${inverted ? 'logo-lockup--inverted' : ''}`}><img src={logoUrl} alt="KKGT Import Export" width="320" height="108" decoding="async" /></span>;
+  return <span className={`logo-lockup ${inverted ? 'logo-lockup--inverted' : ''}`}><img src={inverted ? footerLogoUrl : logoUrl} alt="KKGT Import Export" width="320" height="108" decoding="async" /></span>;
 }
 
 function RouteFallback() {

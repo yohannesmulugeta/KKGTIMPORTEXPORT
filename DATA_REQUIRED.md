@@ -31,11 +31,10 @@ The website will not invent or infer regulated product details that are not supp
 ## 2. Company details to confirm
 
 - Exact legal spelling of the company name
-- Confirm establishment year: 1999 EC
 - Confirm main office address
-- Confirm primary telephone numbers
 - Confirm working hours
-- Confirm official company email
+
+The company confirmed that its founding year is **1999 E.C. / 2007 Gregorian** and requested the email and phone numbers printed on page 13 of the supplied *Company Profile Booklet.pdf*. The website now uses those contact details. Live email receipt and phone reachability have not been tested.
 
 ## 3. Leadership spelling and titles
 
@@ -108,6 +107,6 @@ Until the above data is supplied, the site uses conservative, source-backed word
 
 ## 8. Inquiry delivery and connected coffee site
 
-- Confirm the receiving inbox and provide an approved form endpoint if the website should send inquiries directly. The current form only opens a draft in the visitor's email app; delivery cannot be confirmed by the website.
+- Confirm that the booklet email receives inquiries, and provide an approved form endpoint if the website should send inquiries directly. The current form only opens a draft in the visitor's email app; delivery cannot be confirmed by the website.
 - Confirm the public URL for the dedicated KKGT Coffee site before adding a cross-site link.
 - Review `CONTENT_SOURCES.md` for public-source details and unresolved publication checks.

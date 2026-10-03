@@ -39,7 +39,7 @@ export function Agrochemicals({ initialCategory = 'All' }: { initialCategory?: '
   return (
     <>
       <Seo title={`${initialCategory === 'All' ? 'Agrochemicals & Crop Protection' : `${initialCategory}s`} | KKGT`} description="Browse sourced crop-protection entries from KKGT’s supplied catalogue." />
-      <PageHero eyebrow="AGROCHEMICALS" title={pageTitle} accent={pageAccent} copy="Explore KKGT’s sourced catalogue entries. Confirm product use and safety details against the current approved label." image="/media/catalogue-field.webp" />
+      <PageHero eyebrow="AGROCHEMICALS" title={pageTitle} accent={pageAccent} copy="Explore KKGT’s sourced catalogue entries. Confirm product use and safety details against the current approved label." image="/media/kkgt-supplied/field-group.webp" imageAlt="Group together during a field visit" className="agro-page-hero" />
 
       <section className="section section--paper">
         <div className="container">

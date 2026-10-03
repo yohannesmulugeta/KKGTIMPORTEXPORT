@@ -5,8 +5,9 @@ export const company = {
   legalName: 'Kelbesa Kekeba General Trading',
   motto: 'We Cultivate Ideas for Growth',
   tagline: 'Rooted in Ethiopia. Trading with the world.',
-  email: 'info@kkgtimportexport.com',
-  phones: ['+251 99 182 8202', '+251 91 103 6990'],
+  founded: '1999 E.C. (2007 Gregorian)',
+  email: 'infoexport@kkgtimportandexport.com',
+  phones: ['+251 11 810 6453', '+251 91 103 6990', '+251 90 403 3559'],
   address: ['Addis Ababa, Lideta, Sengatera', 'Yobek Commercial Center, 7th Floor', 'Office 703A'],
   hours: ['Mon–Fri · 09:00–19:00', 'Saturday · Half day'],
 };

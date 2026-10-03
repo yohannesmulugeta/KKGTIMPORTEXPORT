@@ -31,12 +31,13 @@ export function Reveal({ children, className = '', delay = 0 }: { children: Reac
   );
 }
 
-export function PageHero({ eyebrow, title, accent, copy, image }: { eyebrow: string; title: string; accent?: string; copy: string; image: string }) {
+export function PageHero({ eyebrow, title, accent, copy, image, imageAlt = '', imageLabel, className = '' }: { eyebrow: string; title: string; accent?: string; copy: string; image: string; imageAlt?: string; imageLabel?: string; className?: string }) {
   return (
-    <section className="page-hero">
-      <div className="page-hero__image" aria-hidden="true">
-        <img src={image.startsWith('/') ? assetUrl(image) : image} alt="" loading="eager" decoding="async" fetchPriority="high" onError={(event) => { event.currentTarget.hidden = true; }} />
+    <section className={`page-hero ${className}`}>
+      <div className="page-hero__image">
+        <img src={image.startsWith('/') ? assetUrl(image) : image} alt={imageAlt} loading="eager" decoding="async" fetchPriority="high" onError={(event) => { event.currentTarget.hidden = true; }} />
         <div className="page-hero__scrim" />
+        {imageLabel ? <span className="page-hero__image-label">{imageLabel}</span> : null}
       </div>
       <div className="container page-hero__content">
         <Reveal>

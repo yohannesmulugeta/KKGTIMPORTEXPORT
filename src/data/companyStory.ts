@@ -2,8 +2,8 @@ export const companyStory = [
   {
     number: '01',
     label: 'ROOTED IN ETHIOPIA',
-    title: 'Grounded in Ethiopian trade.',
-    copy: 'KKGT’s public portfolio brings agricultural products and trading services together for suppliers and customers.',
+    title: 'Founded in 1999 E.C.',
+    copy: 'Established in 2007 Gregorian, KKGT began as a local trading operation serving agricultural customers in Ethiopia.',
   },
   {
     number: '02',
@@ -23,6 +23,15 @@ export const companyStory = [
     title: 'Connecting Ethiopian value with markets.',
     copy: 'A useful buyer conversation starts with a clear product requirement and current information from KKGT.',
   },
+] as const;
+
+export const coreValues = [
+  'Ethical conduct',
+  'Responsibility',
+  'Quality focus',
+  'Long-term partnership',
+  'Punctuality',
+  'Transparency',
 ] as const;
 
 export const trustFramework = [

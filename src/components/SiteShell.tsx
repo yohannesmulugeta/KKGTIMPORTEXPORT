@@ -16,7 +16,7 @@ const primaryLinks = [
   ['Quality', '/quality'],
   ['Process', '/process'],
   ['Gallery', '/gallery'],
-  ['Contact', '/contact'],
+  ['Awards', '/awards'],
 ] as const;
 
 const mobileLinks = [
@@ -29,6 +29,7 @@ const mobileLinks = [
   ['07', 'Quality & Operations', '/quality'],
   ['08', 'Our Process', '/process'],
   ['09', 'Gallery', '/gallery'],
+  ['10', 'Awards & Recognition', '/awards'],
 ] as const;
 
 function Logo({ inverted = false }: { inverted?: boolean }) {
@@ -117,7 +118,7 @@ function Header() {
                   </Link>
                 ))}
                 <Link to="/contact" className="mobile-menu__cta">
-                  <span>10</span>
+                  <span>11</span>
                   <strong>Start an inquiry</strong>
                   <ArrowUpRight size={18} aria-hidden="true" />
                 </Link>
@@ -136,8 +137,8 @@ function Footer() {
       <div className="container footer-grid">
         <div className="footer-brand"><Logo inverted /><p>{company.tagline}</p></div>
         <div><span className="footer-label">BUSINESSES</span><Link to="/coffee">Coffee Export</Link><Link to="/commodities">Agricultural Commodities</Link><Link to="/agrochemicals">Agrochemicals</Link><Link to="/trading">Import & Trading</Link></div>
-        <div><span className="footer-label">COMPANY</span><Link to="/about">About KKGT</Link><Link to="/process">Our Process</Link><Link to="/quality">Quality & Operations</Link><Link to="/gallery">Gallery</Link><Link to="/contact">Contact</Link></div>
-        <div><span className="footer-label">CONTACT</span><a href={`mailto:${company.email}`}>{company.email}</a><a href="tel:+251991828202">{company.phones[0]}</a><p>{company.address[0]}<br />{company.address[1]}</p></div>
+        <div><span className="footer-label">COMPANY</span><Link to="/about">About KKGT</Link><Link to="/process">Our Process</Link><Link to="/quality">Quality & Operations</Link><Link to="/gallery">Gallery</Link><Link to="/awards">Awards</Link><Link to="/contact">Contact</Link></div>
+        <div><span className="footer-label">CONTACT</span><a href={`mailto:${company.email}`}>{company.email}</a><a href={`tel:${company.phones[0].replace(/\s/g, '')}`}>{company.phones[0]}</a><p>{company.address[0]}<br />{company.address[1]}</p></div>
       </div>
       <div className="container footer-bottom"><span>© {new Date().getFullYear()} KKGT Import Export</span><span>Quality · Integrity · Innovation</span></div>
     </footer>

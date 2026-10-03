@@ -1,21 +1,25 @@
-import { ArrowUpRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
 import { InquiryBand, PageHero, Reveal, SectionHeading, Seo } from '../components/UI';
+import { assetUrl } from '../data/assetUrl';
+
+const tradingAreas = [
+  { number: '01', title: 'Agricultural Inputs', copy: 'Products that support agricultural activity and distribution channels.', image: '/media/trading/agricultural-inputs.webp', imageAlt: 'Illustrative arrangement of seeds and seed trays' },
+  { number: '02', title: 'Stationery', copy: 'Selected stationery imports and commercial supply activity.', image: '/media/trading/stationery.webp', imageAlt: 'Illustrative arrangement of notebooks, paper and pens' },
+  { number: '03', title: 'Construction Materials', copy: 'Selected construction-related trading activity for the local market.', image: '/media/trading/construction-materials.webp', imageAlt: 'Illustrative arrangement of tiles, bricks and metal profiles' },
+];
 
 export function Trading() {
   return (
     <>
       <Seo title="Import & Trading | KKGT" description="KKGT’s import and trading activities include agricultural inputs, stationery and construction materials for the Ethiopian market." />
-      <PageHero eyebrow="IMPORT & TRADING" title="The right product." accent="The right market." copy="KKGT’s diversified trading business supports selected imported products and commercial requirements in Ethiopia." image="/media/catalogue-field.webp" />
+      <PageHero eyebrow="IMPORT & TRADING" title="The right product." accent="The right market." copy="KKGT’s diversified trading business supports selected imported products and commercial requirements in Ethiopia." image="/media/trading/trading-hero.webp" imageAlt="Illustrative arrangement of agricultural, stationery and construction materials" imageLabel="Illustrative imagery" />
       <section className="section section--paper">
         <div className="container">
           <Reveal><SectionHeading eyebrow="TRADING AREAS" title="Selected products" accent="for the Ethiopian market." /></Reveal>
           <div className="statement-grid three-col">
-            {[
-              ['01', 'Agricultural Inputs', 'Products that support agricultural activity and distribution channels.'],
-              ['02', 'Stationery', 'Selected stationery imports and commercial supply activity.'],
-              ['03', 'Construction Materials', 'Selected construction-related trading activity for the local market.'],
-            ].map(([no, title, copy]) => <Reveal key={no} className="statement-card"><span>{no}</span><h3>{title}</h3><p>{copy}</p></Reveal>)}
+            {tradingAreas.map((area) => <Reveal key={area.number} className="statement-card trading-card">
+              <img src={assetUrl(area.image)} alt={area.imageAlt} loading="lazy" decoding="async" />
+              <div className="trading-card__copy"><span>{area.number} / ILLUSTRATIVE IMAGERY</span><h3>{area.title}</h3><p>{area.copy}</p></div>
+            </Reveal>)}
           </div>
         </div>
       </section>

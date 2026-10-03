@@ -2,13 +2,13 @@ import { ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { InquiryBand, PageHero, Reveal, SectionHeading, Seo } from '../components/UI';
 import { businessAreas, company } from '../data/company';
-import { companyStory, trustFramework } from '../data/companyStory';
+import { companyStory, coreValues, trustFramework } from '../data/companyStory';
 
 export function About() {
   return (
     <>
       <Seo title="About KKGT | KKGT Import Export" description="Learn about KKGT Import Export, an Ethiopian company operating across coffee and agricultural exports, agrochemicals, agricultural inputs and diversified trading." />
-      <PageHero eyebrow="ABOUT KKGT" title="Built around agriculture." accent="Connected to markets." copy="KKGT brings export, import and agricultural distribution together under one Ethiopian trading company." image="/media/ethiopian-highlands.webp" />
+      <PageHero eyebrow="ABOUT KKGT" title="Built around agriculture." accent="Connected to markets." copy="KKGT brings export, import and agricultural distribution together under one Ethiopian trading company." image="/media/kkgt-supplied/office-portrait.webp" imageAlt="Qalbeessaa Baanjee seated in his office" className="about-page-hero" />
 
       <section className="section section--paper">
         <div className="container editorial-grid">
@@ -17,7 +17,7 @@ export function About() {
             <p className="overline">{company.motto}</p>
             <h2>{company.name} connects <em>origin, products and markets.</em></h2>
             <div className="two-copy">
-              <p>KKGT’s public business portfolio includes Ethiopian Arabica coffee, agricultural commodities, crop-protection products, agricultural inputs, stationery and construction materials.</p>
+              <p>Founded in {company.founded}, KKGT’s business portfolio includes Ethiopian Arabica coffee, agricultural commodities, crop-protection products, agricultural inputs, stationery and construction materials.</p>
               <p>The company works across sourcing, commercial coordination, quality handling, distribution and export preparation, with a focus on building durable relationships around real market needs.</p>
             </div>
           </Reveal>
@@ -28,8 +28,22 @@ export function About() {
         <div className="container">
           <Reveal><SectionHeading eyebrow="MISSION & VISION" title="Growth should be practical," accent="responsible and shared." /></Reveal>
           <div className="statement-grid">
-            <Reveal className="statement-card"><span>01 / MISSION</span><h3>Work with the market and community.</h3><p>Identify agricultural problems and commercial needs, then connect them with appropriate products, technologies and market opportunities in a sustainable way.</p></Reveal>
-            <Reveal className="statement-card" delay={.08}><span>02 / VISION</span><h3>Build an admired Ethiopian trading company.</h3><p>Grow through innovation, quality, cost-conscious execution, strong relationships and long-term mutual prosperity.</p></Reveal>
+            <Reveal className="statement-card"><span>01 / MISSION</span><h3>Understand the customer’s requirement.</h3><p>Offer flexible sourcing and dependable service, with a focus on quality, competitive pricing and timely delivery.</p></Reveal>
+            <Reveal className="statement-card" delay={.08}><span>02 / VISION</span><h3>Be a preferred Ethiopian trading partner.</h3><p>Grow as a leading agricultural trading company in Africa and a preferred partner for Ethiopian-origin products.</p></Reveal>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--paper">
+        <div className="container">
+          <Reveal><SectionHeading eyebrow="OUR CORE VALUES" title="Principles for" accent="lasting relationships." /></Reveal>
+          <div className="statement-grid three-col">
+            {coreValues.map((value, index) => (
+              <Reveal className="statement-card" key={value} delay={index * .04}>
+                <span>0{index + 1} / VALUE</span>
+                <h3>{value}</h3>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>

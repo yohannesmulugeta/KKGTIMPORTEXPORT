@@ -4,6 +4,7 @@ import { InquiryBand, Reveal, Seo } from '../components/UI';
 import { businessAreas, company, processSteps } from '../data/company';
 import { coffeeOrigins } from '../data/catalog';
 import { assetUrl } from '../data/assetUrl';
+import { suppliedMedia } from '../data/suppliedMedia';
 
 const portfolio = businessAreas.map((area, index) => ({ ...area, number: `0${index + 1}` }));
 
@@ -14,7 +15,7 @@ export function Home() {
       <section className="editorial-hero">
         <div className="container editorial-hero__grid">
           <div className="editorial-hero__copy">
-            <Reveal><span className="eyebrow">KKGT IMPORT EXPORT · ETHIOPIA</span><h1>From Ethiopian origin to <em>world markets.</em></h1><p>Explore coffee, agricultural commodities, crop protection and trading through one Ethiopian company.</p><div className="editorial-hero__actions"><Link className="button button--green" to="/contact">Start an inquiry <ArrowUpRight size={17} /></Link><Link className="inline-arrow" to="/about">Get to know KKGT <ArrowDownRight size={17} /></Link></div></Reveal>
+            <Reveal><span className="eyebrow">KKGT IMPORT EXPORT · ETHIOPIA</span><h1>From Ethiopian origin to <em>world markets.</em></h1><p>Explore coffee, agricultural commodities, crop protection and trading through one Ethiopian company.</p><div className="editorial-hero__actions"><Link className="button button--green" to="/contact">Start an inquiry <ArrowUpRight size={17} /></Link><Link className="inline-arrow" to="/about">Get to know KKGT <ArrowDownRight size={17} /></Link></div><Link className="editorial-hero__recognition" to="/awards"><img src={suppliedMedia.recognitionTrophy} alt="" decoding="async" /><span><small>FROM THE KKGT COLLECTION</small><strong>Awards & recognition</strong></span><ArrowUpRight size={18} aria-hidden="true" /></Link></Reveal>
           </div>
           <div className="editorial-hero__visual" aria-label="Illustrative Ethiopian coffee imagery"><img src={assetUrl('/media/coffee-cherries.webp')} alt="Coffee cherries on a branch" /><div className="editorial-hero__small"><img src={assetUrl('/media/green-coffee.webp')} alt="Green coffee beans" /></div><span>ETHIOPIAN COFFEE · ORIGIN TO MARKET</span></div>
         </div>
@@ -23,6 +24,21 @@ export function Home() {
 
       <section className="editorial-intro section">
         <div className="container editorial-intro__grid"><span className="eyebrow">WHO WE ARE</span><div><Reveal><h2>Built around agriculture.<br /><em>Connected by trade.</em></h2><p>{company.name} works across Ethiopian export, import and local distribution. Each business has a clear route to the products and information a buyer needs.</p><Link to="/about" className="inline-arrow">Our company <ArrowUpRight size={17} /></Link></Reveal></div></div>
+      </section>
+
+      <section className="supplied-feature section" aria-labelledby="field-feature-title">
+        <div className="container supplied-feature__layout">
+          <Reveal className="supplied-feature__copy">
+            <span className="eyebrow">FROM THE KKGT COLLECTION</span>
+            <h2 id="field-feature-title">A view from <em>the field.</em></h2>
+            <p>Explore photographs supplied by KKGT showing people together in an agricultural field, alongside more images from the company collection.</p>
+            <Link to="/gallery" className="inline-arrow">View the gallery <ArrowUpRight size={17} /></Link>
+          </Reveal>
+          <Reveal className="supplied-feature__media" delay={.08}>
+            <img src={suppliedMedia.fieldInspection} alt="Group standing together in a green agricultural field" loading="lazy" decoding="async" />
+            <span>KKGT-supplied photograph</span>
+          </Reveal>
+        </div>
       </section>
 
       <section className="portfolio-section section" aria-labelledby="portfolio-title"><div className="container"><div className="portfolio-heading"><div><span className="eyebrow">EXPLORE KKGT</span><h2 id="portfolio-title">The right place to <em>start.</em></h2></div><p>Choose a business area to see its portfolio and send a focused inquiry.</p></div><div className="portfolio-grid">{portfolio.map((area) => <Link className={`portfolio-card portfolio-card--${area.number}`} key={area.to} to={area.to}><div className="portfolio-card__image" style={{ backgroundImage: `url(${area.image})` }} /><div className="portfolio-card__body"><span>{area.number} / {area.eyebrow}</span><h3>{area.title}</h3><p>{area.description}</p><strong>Explore business <ArrowUpRight size={17} /></strong></div></Link>)}</div></div></section>

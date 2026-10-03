@@ -1,6 +1,7 @@
 import { CheckCircle2 } from 'lucide-react';
 import { InquiryBand, PageHero, Reveal, SectionHeading, Seo } from '../components/UI';
 import { proofCategories } from '../data/companyStory';
+import { suppliedMedia } from '../data/suppliedMedia';
 
 export function Quality() {
   return (
@@ -25,6 +26,19 @@ export function Quality() {
         <div className="container values-layout">
           <Reveal><span className="eyebrow eyebrow--light">TRUST & PROOF</span><h2>Credibility is stronger when <em>every claim can be verified.</em></h2></Reveal>
           <Reveal className="values-copy" delay={.08}><p>Ask KKGT for the documents that apply to your product, lot and destination. Current specifications and supporting records should be reviewed as part of each commercial offer.</p><p>Registration and safety information for agrochemicals must come from the current approved product label.</p></Reveal>
+        </div>
+      </section>
+      <section className="supplied-feature supplied-feature--quality section" aria-labelledby="quality-field-title">
+        <div className="container supplied-feature__layout">
+          <Reveal className="supplied-feature__media">
+            <img src={suppliedMedia.fieldLandscape} alt="Group gathered at the edge of a green agricultural field" loading="lazy" decoding="async" />
+            <span>KKGT-supplied photograph</span>
+          </Reveal>
+          <Reveal className="supplied-feature__copy" delay={.08}>
+            <span className="eyebrow">IN THE FIELD</span>
+            <h2 id="quality-field-title">See the people <em>behind the conversation.</em></h2>
+            <p>This supplied photograph shows a group in an agricultural field. Product, location and activity details should be confirmed with KKGT before they are used as evidence for a particular transaction.</p>
+          </Reveal>
         </div>
       </section>
       <section className="proof-room">

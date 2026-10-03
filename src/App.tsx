@@ -15,6 +15,7 @@ const Trading = lazy(() => import('./pages/Trading').then((module) => ({ default
 const Quality = lazy(() => import('./pages/Quality').then((module) => ({ default: module.Quality })));
 const Process = lazy(() => import('./pages/Process').then((module) => ({ default: module.Process })));
 const Gallery = lazy(() => import('./pages/Gallery').then((module) => ({ default: module.Gallery })));
+const Awards = lazy(() => import('./pages/Awards').then((module) => ({ default: module.Awards })));
 const Contact = lazy(() => import('./pages/Contact').then((module) => ({ default: module.Contact })));
 const NotFound = lazy(() => import('./pages/NotFound').then((module) => ({ default: module.NotFound })));
 
@@ -39,6 +40,7 @@ export default function App() {
         <Route path="quality" element={<Quality />} />
         <Route path="process" element={<Process />} />
         <Route path="gallery" element={<Gallery />} />
+        <Route path="awards" element={<Awards />} />
         <Route path="contact" element={<Contact />} />
         <Route path="about-us" element={<Navigate to="/about" replace />} />
         <Route path="services" element={<Navigate to="/" replace />} />

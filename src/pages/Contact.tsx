@@ -99,7 +99,7 @@ export function Contact() {
             <p>Use the form to prepare an email, or contact KKGT directly. You will need to press Send in your email app.</p>
             <div className="contact-detail-list">
               <a href={`mailto:${company.email}`}><Mail size={20} aria-hidden="true" /><div><span>Email</span><strong>{company.email}</strong></div></a>
-              <a href="tel:+251991828202"><Phone size={20} aria-hidden="true" /><div><span>Phone</span><strong>{company.phones[0]}</strong></div></a>
+              <div><Phone size={20} aria-hidden="true" /><div><span>Phone</span>{company.phones.map((phone) => <a key={phone} href={`tel:${phone.replace(/\s/g, '')}`}><strong>{phone}</strong></a>)}</div></div>
               <div><MapPin size={20} aria-hidden="true" /><div><span>Office</span><strong>{company.address[0]}<br />{company.address[1]}<br />{company.address[2]}</strong></div></div>
             </div>
           </Reveal>

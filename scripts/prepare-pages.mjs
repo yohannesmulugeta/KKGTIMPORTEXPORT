@@ -1,4 +1,4 @@
-import { copyFileSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
 const projectRoot = resolve(import.meta.dirname, '..');
@@ -7,11 +7,6 @@ const isGitHubPages = process.argv.includes('--github-pages');
 const productionSite = 'https://kkgtimportexport.com';
 const siteBase = isGitHubPages ? 'https://yohannesmulugeta.github.io/KKGTIMPORTEXPORT' : productionSite;
 
-const socialPreviewBase64 = Array.from({ length: 3 }, (_, index) =>
-  readFileSync(resolve(projectRoot, `scripts/social-assets/import-social-final.part${index}.b64`), 'utf8').trim(),
-).join('');
-mkdirSync(resolve(outputRoot, 'media'), { recursive: true });
-writeFileSync(resolve(outputRoot, 'media/social-preview.jpg'), Buffer.from(socialPreviewBase64, 'base64'));
 
 const sitemapPath = resolve(outputRoot, 'sitemap.xml');
 let sitemap = readFileSync(sitemapPath, 'utf8');

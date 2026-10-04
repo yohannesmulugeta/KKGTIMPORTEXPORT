@@ -7,7 +7,7 @@ const images = [
   { src: assetUrl('/media/coffee-cherries.webp'), title: 'Coffee at origin', label: 'Illustrative coffee imagery', to: '/coffee' },
   { src: assetUrl('/media/green-coffee.webp'), title: 'Green coffee', label: 'Illustrative coffee imagery', to: '/coffee' },
   { src: assetUrl('/media/ethiopian-highlands.webp'), title: 'Ethiopian landscape', label: 'Illustrative landscape imagery', to: '/about' },
-  { src: assetUrl('/media/commodities-illustrative.png'), title: 'Agricultural commodities', label: 'Illustrative product imagery', to: '/commodities' },
+  { src: assetUrl('/media/commodities-illustrative.webp'), title: 'Agricultural commodities', label: 'Illustrative product imagery', to: '/commodities' },
   { src: assetUrl('/media/catalogue-field.webp'), title: 'Crop protection catalogue', label: 'KKGT supplied catalogue artwork', to: '/agrochemicals' },
 ];
 

@@ -14,18 +14,18 @@ const baseHtml = readFileSync(resolve(outputRoot, 'index.html'), 'utf8');
 
 const staticMeta = {
   '/': ['KKGT Import Export | Ethiopia Coffee, Commodities & Agrochemicals', 'KKGT Import Export connects Ethiopian coffee, agricultural commodities, crop-protection products and trading opportunities with local and international markets.', '/media/social-preview.jpg'],
-  '/about': ['About KKGT Import Export | Ethiopia', 'Learn about KKGT Import Export, an Ethiopian trading company working across coffee, agricultural commodities, agrochemicals and import and trading activities.', '/media/ethiopian-highlands.webp'],
-  '/coffee': ['Ethiopian Coffee Export | KKGT Import Export', 'Explore KKGT’s Ethiopian coffee origins and start a direct conversation about current green coffee availability, specifications and export requirements.', '/media/coffee-cherries.webp'],
-  '/commodities': ['Ethiopian Agricultural Commodities | KKGT Import Export', 'Explore KKGT’s agricultural commodity portfolio, including sesame, soybeans, pulses and beans for local and international trading opportunities.', '/media/commodities-illustrative.png'],
-  '/agrochemicals': ['Agrochemicals & Crop Protection | KKGT Import Export', 'Browse KKGT crop-protection products by category and review published product information for herbicides, fungicides and insecticides.', '/media/catalogue-field.webp'],
-  '/agrochemicals/herbicides': ['Herbicides | KKGT Agrochemicals', 'Browse herbicide products in KKGT’s published crop-protection catalogue and review product-specific active ingredient and use information.', '/media/catalogue-field.webp'],
-  '/agrochemicals/fungicides': ['Fungicides | KKGT Agrochemicals', 'Browse fungicide products in KKGT’s published crop-protection catalogue and review product-specific active ingredient and use information.', '/media/catalogue-field.webp'],
-  '/agrochemicals/insecticides': ['Insecticides | KKGT Agrochemicals', 'Browse insecticide products in KKGT’s published crop-protection catalogue and review product-specific active ingredient and use information.', '/media/catalogue-field.webp'],
-  '/trading': ['Import & Trading | KKGT Import Export', 'Explore KKGT’s import and trading activities supported by Ethiopian market knowledge and commercial coordination.', '/media/ethiopian-highlands.webp'],
-  '/quality': ['Quality & Operations | KKGT Import Export', 'Learn how KKGT presents quality handling, product integrity and operational coordination across its trading activities.', '/media/ethiopian-highlands.webp'],
-  '/process': ['Our Process | KKGT Import Export', 'See KKGT’s business process from sourcing and preparation through quality, trade coordination and delivery.', '/media/ethiopian-highlands.webp'],
-  '/gallery': ['Gallery | KKGT Import Export', 'Explore visual highlights from KKGT Import Export and its coffee, commodities, agrochemical and trading activities.', '/media/ethiopian-highlands.webp'],
-  '/contact': ['Contact KKGT Import Export | Addis Ababa, Ethiopia', 'Contact KKGT Import Export in Addis Ababa for coffee, agricultural commodities, agrochemicals and trading inquiries.', '/media/ethiopian-highlands.webp'],
+  '/about': ['About KKGT Import Export | Ethiopia', 'Learn about KKGT Import Export, an Ethiopian trading company working across coffee, agricultural commodities, agrochemicals and import and trading activities.', '/media/social-preview.jpg'],
+  '/coffee': ['Ethiopian Coffee Export | KKGT Import Export', 'Explore KKGT’s Ethiopian coffee origins and start a direct conversation about current green coffee availability, specifications and export requirements.', '/media/social-preview.jpg'],
+  '/commodities': ['Ethiopian Agricultural Commodities | KKGT Import Export', 'Explore KKGT’s agricultural commodity portfolio, including sesame, soybeans, pulses and beans for local and international trading opportunities.', '/media/social-preview.jpg'],
+  '/agrochemicals': ['Agrochemicals & Crop Protection | KKGT Import Export', 'Browse KKGT crop-protection products by category and review published product information for herbicides, fungicides and insecticides.', '/media/social-preview.jpg'],
+  '/agrochemicals/herbicides': ['Herbicides | KKGT Agrochemicals', 'Browse herbicide products in KKGT’s published crop-protection catalogue and review product-specific active ingredient and use information.', '/media/social-preview.jpg'],
+  '/agrochemicals/fungicides': ['Fungicides | KKGT Agrochemicals', 'Browse fungicide products in KKGT’s published crop-protection catalogue and review product-specific active ingredient and use information.', '/media/social-preview.jpg'],
+  '/agrochemicals/insecticides': ['Insecticides | KKGT Agrochemicals', 'Browse insecticide products in KKGT’s published crop-protection catalogue and review product-specific active ingredient and use information.', '/media/social-preview.jpg'],
+  '/trading': ['Import & Trading | KKGT Import Export', 'Explore KKGT’s import and trading activities supported by Ethiopian market knowledge and commercial coordination.', '/media/social-preview.jpg'],
+  '/quality': ['Quality & Operations | KKGT Import Export', 'Learn how KKGT presents quality handling, product integrity and operational coordination across its trading activities.', '/media/social-preview.jpg'],
+  '/process': ['Our Process | KKGT Import Export', 'See KKGT’s business process from sourcing and preparation through quality, trade coordination and delivery.', '/media/social-preview.jpg'],
+  '/gallery': ['Gallery | KKGT Import Export', 'Explore visual highlights from KKGT Import Export and its coffee, commodities, agrochemical and trading activities.', '/media/social-preview.jpg'],
+  '/contact': ['Contact KKGT Import Export | Addis Ababa, Ethiopia', 'Contact KKGT Import Export in Addis Ababa for coffee, agricultural commodities, agrochemicals and trading inquiries.', '/media/social-preview.jpg'],
 };
 
 const catalogSource = readFileSync(resolve(projectRoot, 'src/data/catalog.ts'), 'utf8');
@@ -36,7 +36,7 @@ const entryPattern = /\{ slug: '([^']+)', name: '([^']+)', summary: '([^']+)', i
 const coffeeMeta = new Map(
   [...coffeeSection.matchAll(entryPattern)].map((match) => [
     `/coffee/${match[1]}`,
-    [`${match[2]} Coffee | KKGT Import Export`, `${match[3]} Contact KKGT to discuss current lot details, availability and export requirements.`, match[4]],
+    [`${match[2]} Coffee | KKGT Import Export`, `${match[3]} Contact KKGT to discuss current lot details, availability and export requirements.`, '/media/social-preview.jpg'],
   ]),
 );
 
@@ -52,7 +52,7 @@ const productPattern = /product\(\s*\d+,\s*'([^']+)',\s*'([^']+)',\s*'[^']+',\s*
 const productMeta = new Map(
   [...productSource.matchAll(productPattern)].map((match) => [
     `/agrochemicals/product/${match[1]}`,
-    [`${match[2]} | KKGT Agrochemicals`, match[3], '/media/catalogue-field.webp'],
+    [`${match[2]} | KKGT Agrochemicals`, match[3], '/media/social-preview.jpg'],
   ]),
 );
 
@@ -68,13 +68,13 @@ function getMeta(route) {
   return staticMeta[route] ?? coffeeMeta.get(route) ?? commodityMeta.get(route) ?? productMeta.get(route) ?? [
     'KKGT Import Export',
     'Explore KKGT Import Export in Ethiopia.',
-    '/media/ethiopian-highlands.webp',
+    '/media/social-preview.jpg',
   ];
 }
 
 function injectMeta(html, route, noindex = false) {
   const [title, description, imagePath] = getMeta(route);
-  const canonical = route === '/' ? `${siteBase}/` : `${siteBase}${route}`;
+  const canonical = route === '/' ? `${siteBase}/` : `${siteBase}${route}/`;
   const image = imagePath.startsWith('http') ? imagePath : `${siteBase}${imagePath}`;
   const robots = noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large';
 

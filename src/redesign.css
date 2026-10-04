@@ -240,3 +240,30 @@ h1, h2, h3 { text-wrap: balance; }
 @media (prefers-reduced-motion: reduce) {
   .portfolio-card:hover, .gallery-item:hover img { transform: none; }
 }
+
+
+/* Accessibility hardening: improve text contrast without changing the editorial layout. */
+.portfolio-heading p,
+.process-preview__grid p,
+.proof-preview p {
+  color: #5c675f;
+}
+.process-preview__grid span,
+.process-page__list span {
+  color: #aa3f0d;
+}
+.inquiry-band {
+  background: #b9470f;
+}
+.inquiry-band span,
+.inquiry-band p {
+  color: #fff;
+}
+.site-footer .footer-label {
+  color: #dbe6df;
+}
+.site-footer .footer-brand p,
+.site-footer .footer-grid p,
+.site-footer .footer-bottom {
+  color: #c7d3cb;
+}

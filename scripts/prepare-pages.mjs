@@ -43,7 +43,7 @@ const coffeeMeta = new Map(
 const commodityMeta = new Map(
   [...commoditySection.matchAll(entryPattern)].map((match) => [
     `/commodities/${match[1]}`,
-    [`${match[2]} Export | KKGT Import Export`, `${match[3]} Contact KKGT to discuss current availability, specifications and trading requirements.`, match[4]],
+    [`${match[2]} Export | KKGT Import Export`, `${match[3]} Contact KKGT to discuss current availability, specifications and trading requirements.`, '/media/social-preview.jpg'],
   ]),
 );
 

@@ -24,32 +24,26 @@ const fixedMeta: Record<string, SeoMeta> = {
   '/coffee': {
     title: 'Ethiopian Coffee Export | KKGT Import Export',
     description: 'Explore KKGT’s Ethiopian coffee origins and start a direct conversation about current green coffee availability, specifications and export requirements.',
-    image: `${SITE_URL}/media/coffee-cherries.webp`,
   },
   '/commodities': {
     title: 'Ethiopian Agricultural Commodities | KKGT Import Export',
     description: 'Explore KKGT’s agricultural commodity portfolio, including sesame, soybeans, pulses and beans for local and international trading opportunities.',
-    image: `${SITE_URL}/media/commodities-illustrative.png`,
   },
   '/agrochemicals': {
     title: 'Agrochemicals & Crop Protection | KKGT Import Export',
     description: 'Browse KKGT crop-protection products by category and review published product information for herbicides, fungicides and insecticides.',
-    image: `${SITE_URL}/media/catalogue-field.webp`,
   },
   '/agrochemicals/herbicides': {
     title: 'Herbicides | KKGT Agrochemicals',
     description: 'Browse herbicide products in KKGT’s published crop-protection catalogue and review product-specific active ingredient and use information.',
-    image: `${SITE_URL}/media/catalogue-field.webp`,
   },
   '/agrochemicals/fungicides': {
     title: 'Fungicides | KKGT Agrochemicals',
     description: 'Browse fungicide products in KKGT’s published crop-protection catalogue and review product-specific active ingredient and use information.',
-    image: `${SITE_URL}/media/catalogue-field.webp`,
   },
   '/agrochemicals/insecticides': {
     title: 'Insecticides | KKGT Agrochemicals',
     description: 'Browse insecticide products in KKGT’s published crop-protection catalogue and review product-specific active ingredient and use information.',
-    image: `${SITE_URL}/media/catalogue-field.webp`,
   },
   '/trading': {
     title: 'Import & Trading | KKGT Import Export',
@@ -98,7 +92,6 @@ function getMeta(pathname: string): SeoMeta {
       return {
         title: `${origin.name} Coffee | KKGT Import Export`,
         description: `${origin.summary} Contact KKGT to discuss current lot details, availability and export requirements.`,
-        image: absoluteUrl(origin.image),
       };
     }
   }
@@ -110,7 +103,6 @@ function getMeta(pathname: string): SeoMeta {
       return {
         title: `${commodity.name} Export | KKGT Import Export`,
         description: `${commodity.summary} Contact KKGT to discuss current availability, specifications and trading requirements.`,
-        image: absoluteUrl(commodity.image),
       };
     }
   }
@@ -122,7 +114,6 @@ function getMeta(pathname: string): SeoMeta {
       return {
         title: `${product.name} | KKGT Agrochemicals`,
         description: product.description,
-        image: absoluteUrl(product.image ?? '/media/catalogue-field.webp'),
       };
     }
   }
@@ -160,9 +151,7 @@ export function SeoManager() {
   useEffect(() => {
     const path = normalizePath(pathname);
     const meta = getMeta(path);
-    const canonical = path === '/' ? `${SITE_URL}/` : `${SITE_URL}${path}`;
-    const image = absoluteUrl(meta.image);
-
+    const canonical = path === '/' ? `${SITE_URL}/` : `${SITE_URL}${path}/`;
     document.title = meta.title;
     setCanonical(canonical);
     setMeta('name', 'description', meta.description);
@@ -172,12 +161,16 @@ export function SeoManager() {
     setMeta('property', 'og:type', 'website');
     setMeta('property', 'og:site_name', 'KKGT Import Export');
     setMeta('property', 'og:url', canonical);
-    setMeta('property', 'og:image', image);
+    setMeta('property', 'og:image', DEFAULT_IMAGE);
+    setMeta('property', 'og:image:type', 'image/jpeg');
+    setMeta('property', 'og:image:width', '1200');
+    setMeta('property', 'og:image:height', '630');
     setMeta('property', 'og:image:alt', 'KKGT Import Export');
     setMeta('name', 'twitter:card', 'summary_large_image');
     setMeta('name', 'twitter:title', meta.title);
     setMeta('name', 'twitter:description', meta.description);
-    setMeta('name', 'twitter:image', image);
+    setMeta('name', 'twitter:image', DEFAULT_IMAGE);
+    setMeta('name', 'twitter:image:alt', 'KKGT Import Export');
 
     let schema = document.getElementById('seo-webpage-schema') as HTMLScriptElement | null;
     if (!schema) {

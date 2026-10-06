@@ -14,19 +14,19 @@ const baseHtml = readFileSync(resolve(outputRoot, 'index.html'), 'utf8');
 
 const staticMeta = {
   '/': ['KKGT Import Export | Ethiopia Coffee, Commodities & Agrochemicals', 'KKGT Import Export connects Ethiopian coffee, agricultural commodities, crop-protection products and trading opportunities with local and international markets.', '/media/social-preview.jpg'],
-  '/about': ['About KKGT Import Export | Ethiopia', 'Learn about KKGT Import Export, an Ethiopian trading company working across coffee, agricultural commodities, agrochemicals and import and trading activities.', '/media/kkgt-supplied/office-portrait.webp'],
-  '/coffee': ['Ethiopian Coffee Export | KKGT Import Export', 'Explore KKGT’s Ethiopian coffee origins and start a direct conversation about current green coffee availability, specifications and export requirements.', '/media/coffee-cherries.webp'],
-  '/commodities': ['Ethiopian Agricultural Commodities | KKGT Import Export', 'Explore KKGT’s agricultural commodity portfolio, including sesame, soybeans, pulses and beans for local and international trading opportunities.', '/media/commodities-illustrative.png'],
-  '/agrochemicals': ['Agrochemicals & Crop Protection | KKGT Import Export', 'Browse KKGT crop-protection products by category and review published product information for herbicides, fungicides and insecticides.', '/media/kkgt-supplied/field-group.webp'],
-  '/agrochemicals/herbicides': ['Herbicides | KKGT Agrochemicals', 'Browse herbicide products in KKGT’s published crop-protection catalogue and review product-specific active ingredient and use information.', '/media/kkgt-supplied/field-group.webp'],
-  '/agrochemicals/fungicides': ['Fungicides | KKGT Agrochemicals', 'Browse fungicide products in KKGT’s published crop-protection catalogue and review product-specific active ingredient and use information.', '/media/kkgt-supplied/field-group.webp'],
-  '/agrochemicals/insecticides': ['Insecticides | KKGT Agrochemicals', 'Browse insecticide products in KKGT’s published crop-protection catalogue and review product-specific active ingredient and use information.', '/media/kkgt-supplied/field-group.webp'],
-  '/trading': ['Import & Trading | KKGT Import Export', 'Explore KKGT’s import and trading activities supported by Ethiopian market knowledge and commercial coordination.', '/media/trading/trading-hero.webp'],
-  '/quality': ['Quality & Operations | KKGT Import Export', 'Learn how KKGT presents quality handling, product integrity and operational coordination across its trading activities.', '/media/ethiopian-highlands.webp'],
-  '/process': ['Our Process | KKGT Import Export', 'See KKGT’s business process from sourcing and preparation through quality, trade coordination and delivery.', '/media/ethiopian-highlands.webp'],
-  '/gallery': ['Gallery | KKGT Import Export', 'Explore field and office photographs supplied by KKGT Import Export.', '/media/kkgt-supplied/field-inspection.webp'],
-  '/awards': ['Awards & Recognition | KKGT Import Export', 'View recognition photographs supplied by KKGT Import Export.', '/media/kkgt-supplied/recognition-trophy.webp'],
-  '/contact': ['Contact KKGT Import Export | Addis Ababa, Ethiopia', 'Contact KKGT Import Export in Addis Ababa for coffee, agricultural commodities, agrochemicals and trading inquiries.', '/media/ethiopian-highlands.webp'],
+  '/about': ['About KKGT Import Export | Ethiopia', 'Learn about KKGT Import Export, an Ethiopian trading company working across coffee, agricultural commodities, agrochemicals and import and trading activities.', '/media/social-preview.jpg'],
+  '/coffee': ['Ethiopian Coffee Export | KKGT Import Export', 'Explore KKGT’s Ethiopian coffee origins and start a direct conversation about current green coffee availability, specifications and export requirements.', '/media/social-preview.jpg'],
+  '/commodities': ['Ethiopian Agricultural Commodities | KKGT Import Export', 'Explore KKGT’s agricultural commodity portfolio, including sesame, soybeans, pulses and beans for local and international trading opportunities.', '/media/social-preview.jpg'],
+  '/agrochemicals': ['Agrochemicals & Crop Protection | KKGT Import Export', 'Browse KKGT crop-protection products by category and review published product information for herbicides, fungicides and insecticides.', '/media/social-preview.jpg'],
+  '/agrochemicals/herbicides': ['Herbicides | KKGT Agrochemicals', 'Browse herbicide products in KKGT’s published crop-protection catalogue and review product-specific active ingredient and use information.', '/media/social-preview.jpg'],
+  '/agrochemicals/fungicides': ['Fungicides | KKGT Agrochemicals', 'Browse fungicide products in KKGT’s published crop-protection catalogue and review product-specific active ingredient and use information.', '/media/social-preview.jpg'],
+  '/agrochemicals/insecticides': ['Insecticides | KKGT Agrochemicals', 'Browse insecticide products in KKGT’s published crop-protection catalogue and review product-specific active ingredient and use information.', '/media/social-preview.jpg'],
+  '/trading': ['Import & Trading | KKGT Import Export', 'Explore KKGT’s import and trading activities supported by Ethiopian market knowledge and commercial coordination.', '/media/social-preview.jpg'],
+  '/quality': ['Quality & Operations | KKGT Import Export', 'Learn how KKGT presents quality handling, product integrity and operational coordination across its trading activities.', '/media/social-preview.jpg'],
+  '/process': ['Our Process | KKGT Import Export', 'See KKGT’s business process from sourcing and preparation through quality, trade coordination and delivery.', '/media/social-preview.jpg'],
+  '/gallery': ['Gallery | KKGT Import Export', 'Explore visual highlights from KKGT Import Export and its coffee, commodities, agrochemical and trading activities.', '/media/social-preview.jpg'],
+  '/awards': ['Awards & Recognition | KKGT Import Export', 'View recognition photographs supplied by KKGT Import Export.', '/media/social-preview.jpg'],
+  '/contact': ['Contact KKGT Import Export | Addis Ababa, Ethiopia', 'Contact KKGT Import Export in Addis Ababa for coffee, agricultural commodities, agrochemicals and trading inquiries.', '/media/social-preview.jpg'],
 };
 
 const catalogSource = readFileSync(resolve(projectRoot, 'src/data/catalog.ts'), 'utf8');
@@ -37,14 +37,14 @@ const entryPattern = /\{ slug: '([^']+)', name: '([^']+)', summary: '([^']+)', i
 const coffeeMeta = new Map(
   [...coffeeSection.matchAll(entryPattern)].map((match) => [
     `/coffee/${match[1]}`,
-    [`${match[2]} Coffee | KKGT Import Export`, `${match[3]} Contact KKGT to discuss current lot details, availability and export requirements.`, match[4]],
+    [`${match[2]} Coffee | KKGT Import Export`, `${match[3]} Contact KKGT to discuss current lot details, availability and export requirements.`, '/media/social-preview.jpg'],
   ]),
 );
 
 const commodityMeta = new Map(
   [...commoditySection.matchAll(entryPattern)].map((match) => [
     `/commodities/${match[1]}`,
-    [`${match[2]} Export | KKGT Import Export`, `${match[3]} Contact KKGT to discuss current availability, specifications and trading requirements.`, match[4]],
+    [`${match[2]} Export | KKGT Import Export`, `${match[3]} Contact KKGT to discuss current availability, specifications and trading requirements.`, '/media/social-preview.jpg'],
   ]),
 );
 
@@ -53,7 +53,7 @@ const productPattern = /product\(\s*\d+,\s*'([^']+)',\s*'([^']+)',\s*'[^']+',\s*
 const productMeta = new Map(
   [...productSource.matchAll(productPattern)].map((match) => [
     `/agrochemicals/product/${match[1]}`,
-    [`${match[2]} | KKGT Agrochemicals`, match[3], '/media/catalogue-field.webp'],
+    [`${match[2]} | KKGT Agrochemicals`, match[3], '/media/social-preview.jpg'],
   ]),
 );
 
@@ -69,22 +69,17 @@ function getMeta(route) {
   return staticMeta[route] ?? coffeeMeta.get(route) ?? commodityMeta.get(route) ?? productMeta.get(route) ?? [
     'KKGT Import Export',
     'Explore KKGT Import Export in Ethiopia.',
-    '/media/ethiopian-highlands.webp',
+    '/media/social-preview.jpg',
   ];
 }
 
 function injectMeta(html, route, noindex = false) {
   const [title, description, imagePath] = getMeta(route);
-  const canonical = route === '/' ? `${siteBase}/` : `${siteBase}${route}`;
+  const canonical = route === '/' ? `${siteBase}/` : `${siteBase}${route}/`;
   const image = imagePath.startsWith('http') ? imagePath : `${siteBase}${imagePath}`;
-  const imageType = /\.webp(?:\?|$)/i.test(image) ? 'image/webp' : /\.png(?:\?|$)/i.test(image) ? 'image/png' : 'image/jpeg';
   const robots = noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large';
 
-  const pageHtml = imagePath === '/media/social-preview.jpg' ? html : html
-    .replace(/\s*<meta property="og:image:width" content="[^"]*" \/>/i, '')
-    .replace(/\s*<meta property="og:image:height" content="[^"]*" \/>/i, '');
-
-  return pageHtml
+  return html
     .replace(/<title>[\s\S]*?<\/title>/i, `<title>${escapeHtml(title)}</title>`)
     .replace(/<meta name="description" content="[^"]*" \/>/i, `<meta name="description" content="${escapeHtml(description)}" />`)
     .replace(/<meta name="robots" content="[^"]*" \/>/i, `<meta name="robots" content="${robots}" />`)
@@ -93,7 +88,6 @@ function injectMeta(html, route, noindex = false) {
     .replace(/<meta property="og:description" content="[^"]*" \/>/i, `<meta property="og:description" content="${escapeHtml(description)}" />`)
     .replace(/<meta property="og:url" content="[^"]*" \/>/i, `<meta property="og:url" content="${escapeHtml(canonical)}" />`)
     .replace(/<meta property="og:image" content="[^"]*" \/>/i, `<meta property="og:image" content="${escapeHtml(image)}" />`)
-    .replace(/<meta property="og:image:type" content="[^"]*" \/>/i, `<meta property="og:image:type" content="${imageType}" />`)
     .replace(/<meta name="twitter:title" content="[^"]*" \/>/i, `<meta name="twitter:title" content="${escapeHtml(title)}" />`)
     .replace(/<meta name="twitter:description" content="[^"]*" \/>/i, `<meta name="twitter:description" content="${escapeHtml(description)}" />`)
     .replace(/<meta name="twitter:image" content="[^"]*" \/>/i, `<meta name="twitter:image" content="${escapeHtml(image)}" />`);

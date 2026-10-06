@@ -7,7 +7,7 @@ export function Commodities() {
   return (
     <>
       <Seo title="Agricultural Commodities | KKGT" description="Explore KKGT’s agricultural commodity export offering including sesame, soybeans, mung beans, chickpeas, white beans and red kidney beans." />
-      <PageHero eyebrow="AGRICULTURAL COMMODITIES" title="Crops with market potential." accent="Clear buyer conversations." copy="Explore KKGT’s commodity portfolio and ask for the current specifications, volume and packing that fit your requirement. Product imagery is illustrative." image="/media/commodities-illustrative.png" />
+      <PageHero eyebrow="AGRICULTURAL COMMODITIES" title="Crops with market potential." accent="Clear buyer conversations." copy="Explore KKGT’s commodity portfolio and ask for the current specifications, volume and packing that fit your requirement. Product imagery is illustrative." image="/media/commodities-illustrative.webp" />
 
       <section className="section section--paper">
         <div className="container">

@@ -329,3 +329,30 @@ h1, h2, h3 { text-wrap: balance; }
 @media (prefers-reduced-motion: reduce) {
   .editorial-hero__recognition:hover > svg, .photo-gallery__item a:hover img, .photo-gallery__item a:focus-visible img, .photo-gallery__item a:hover .photo-gallery__caption, .photo-gallery__item a:focus-visible .photo-gallery__caption { transform: none; }
 }
+
+
+/* Accessibility hardening: improve text contrast without changing the editorial layout. */
+.portfolio-heading p,
+.process-preview__grid p,
+.proof-preview p {
+  color: #5c675f;
+}
+.process-preview__grid span,
+.process-page__list span {
+  color: #aa3f0d;
+}
+.inquiry-band {
+  background: #b9470f;
+}
+.inquiry-band span,
+.inquiry-band p {
+  color: #fff;
+}
+.site-footer .footer-label {
+  color: #dbe6df;
+}
+.site-footer .footer-brand p,
+.site-footer .footer-grid p,
+.site-footer .footer-bottom {
+  color: #c7d3cb;
+}

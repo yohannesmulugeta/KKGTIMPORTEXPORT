@@ -48,7 +48,7 @@ h1, h2, h3 { text-wrap: balance; }
 .editorial-hero__visual { position: relative; height: 580px; margin-left: 20px; align-self: stretch; background: #d8e2ce; overflow: visible; }
 .editorial-hero__visual > img { width: 100%; height: 100%; object-fit: cover; }
 .editorial-hero__visual::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg,rgba(8,46,29,.36),transparent 48%); }
-.editorial-hero__visual > span { position: absolute; z-index: 1; bottom: 25px; left: 30px; color: #fff; font-size: 10px; font-weight: 800; letter-spacing: .17em; }
+.editorial-hero__visual > span { position: absolute; z-index: 1; bottom: 25px; right: 24px; padding: 8px 10px; background: rgba(8,46,29,.72); color: #fff; font-size: 10px; font-weight: 800; letter-spacing: .17em; }
 .editorial-hero__small { position: absolute; z-index: 2; width: 37%; height: 37%; bottom: -28px; left: -42px; border: 8px solid #f8f7f1; box-shadow: 0 15px 35px rgba(20,48,29,.12); background: var(--cream); }
 .editorial-hero__small img { width: 100%; height: 100%; object-fit: cover; }
 .editorial-hero__index { display: flex; justify-content: space-between; gap: 20px; padding: 36px 0 22px; border-top: 1px solid var(--line); color: #607266; font-size: 10px; letter-spacing: .16em; font-weight: 800; }
@@ -180,6 +180,11 @@ h1, h2, h3 { text-wrap: balance; }
   .portfolio-grid { grid-template-rows: repeat(3,220px); }
   .process-preview__grid { grid-template-columns: repeat(3,1fr); }
   .process-preview__grid > div { border-bottom: 1px solid var(--line); }
+}
+@media (max-width: 900px) {
+  .editorial-hero__grid { grid-template-columns: 1fr; gap: 0; min-height: 0; }
+  .editorial-hero__copy { padding: 35px 0 45px; }
+  .editorial-hero__visual { height: 420px; margin: 0 0 20px; }
 }
 @media (max-width: 760px) {
   .site-header, .site-header.is-scrolled { padding: 10px 0; }

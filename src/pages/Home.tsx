@@ -1,4 +1,4 @@
-import { ArrowDownRight, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { InquiryBand, Reveal, Seo } from '../components/UI';
 import { businessAreas, company, processSteps } from '../data/company';
@@ -15,9 +15,9 @@ export function Home() {
       <section className="editorial-hero">
         <div className="container editorial-hero__grid">
           <div className="editorial-hero__copy">
-            <Reveal><span className="eyebrow">KKGT IMPORT EXPORT · ETHIOPIA</span><h1>From Ethiopian origin to <em>world markets.</em></h1><p>Explore coffee, agricultural commodities, crop protection and trading through one Ethiopian company.</p><div className="editorial-hero__actions"><Link className="button button--green" to="/contact">Start an inquiry <ArrowUpRight size={17} /></Link><Link className="inline-arrow" to="/about">Get to know KKGT <ArrowDownRight size={17} /></Link></div><Link className="editorial-hero__recognition" to="/awards"><img src={suppliedMedia.recognitionTrophy} alt="" decoding="async" /><span><small>FROM THE KKGT COLLECTION</small><strong>Awards & recognition</strong></span><ArrowUpRight size={18} aria-hidden="true" /></Link></Reveal>
+            <Reveal><span className="eyebrow">KKGT IMPORT EXPORT · ETHIOPIA</span><h1>Export from Ethiopia. <em>Import for local markets.</em></h1><p>Explore agricultural commodity exports, agrochemicals, and import and trading activities through KKGT.</p><div className="editorial-hero__actions"><Link className="button button--green" to="/commodities">Explore exports <ArrowUpRight size={17} /></Link><Link className="inline-arrow" to="/trading">Explore imports <ArrowUpRight size={17} /></Link></div><Link className="editorial-hero__recognition" to="/awards"><img src={suppliedMedia.recognitionTrophy} alt="" decoding="async" /><span><small>FROM THE KKGT COLLECTION</small><strong>Awards & recognition</strong></span><ArrowUpRight size={18} aria-hidden="true" /></Link></Reveal>
           </div>
-          <div className="editorial-hero__visual" aria-label="Illustrative Ethiopian coffee imagery"><img src={assetUrl('/media/coffee-cherries.webp')} alt="Coffee cherries on a branch" /><div className="editorial-hero__small"><img src={assetUrl('/media/green-coffee.webp')} alt="Green coffee beans" /></div><span>ETHIOPIAN COFFEE · ORIGIN TO MARKET</span></div>
+          <div className="editorial-hero__visual"><img src={assetUrl('/media/trading/trading-hero.webp')} alt="Illustrative arrangement of agricultural products and trading materials" /><div className="editorial-hero__small"><img src={suppliedMedia.fieldLandscape} alt="People in an agricultural field in a KKGT-supplied photograph" /></div><span>ILLUSTRATIVE IMAGE · EXPORT & IMPORT</span></div>
         </div>
         <div className="container editorial-hero__index"><span>01 / A COMPANY WITH FOUR BUSINESS LINES</span><span>SCROLL TO EXPLORE ↓</span></div>
       </section>

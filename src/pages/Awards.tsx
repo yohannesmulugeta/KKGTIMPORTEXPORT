@@ -28,8 +28,14 @@ export function Awards() {
           </Reveal>
         </div>
       </header>
-      <section className="awards-documents section" aria-label="Recognition documents">
+      <section className="awards-documents section" aria-label="Recognition photographs">
         <div className="container awards-documents__grid">
+          <Reveal className="awards-document awards-document--award">
+            <a href={suppliedMedia.recognitionAward} target="_blank" rel="noopener noreferrer" aria-label="Open recognition award image in a new tab">
+              <img src={suppliedMedia.recognitionAward} alt="Recognition trophy against a dark background" width="941" height="1672" loading="lazy" decoding="async" />
+              <span>Recognition award <ArrowUpRight size={18} aria-hidden="true" /></span>
+            </a>
+          </Reveal>
           {documents.map((item, index) => (
             <Reveal className="awards-document" key={item.title} delay={index * .08}>
               <a href={item.src} target="_blank" rel="noopener noreferrer" aria-label={`Open ${item.title} photograph in a new tab`}>

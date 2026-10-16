@@ -301,6 +301,8 @@ h1, h2, h3 { text-wrap: balance; }
 .awards-documents__grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; }
 .awards-document a { display: block; color: var(--ink); }
 .awards-document img { display: block; width: 100%; height: 530px; object-fit: contain; background: #eae8df; }
+.awards-document--award { grid-column: 1 / -1; width: min(100%, 400px); justify-self: center; margin-bottom: 36px; }
+.awards-document.awards-document--award img { height: auto; }
 .awards-document span { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding-top: 16px; font-family: Georgia, Cambria, serif; font-size: clamp(23px,2vw,31px); }
 .awards-document svg { flex: none; color: var(--green); }
 .awards-documents__note { margin-top: 34px; color: var(--muted); font-size: 13px; }

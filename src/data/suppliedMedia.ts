@@ -11,4 +11,5 @@ export const suppliedMedia = {
   gumbichuuCertificate: mediaPath('gumbichuu-certificate.webp'),
   oromiaCertificate: mediaPath('oromia-certificate.webp'),
   recognitionTrophy: mediaPath('recognition-trophy.webp'),
+  recognitionAward: mediaPath('recognition-award-studio.png'),
 } as const;

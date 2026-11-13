@@ -141,7 +141,7 @@ function Footer() {
         <div><span className="footer-label">COMPANY</span><Link to="/about">About KKGT</Link><Link to="/process">Our Process</Link><Link to="/quality">Quality & Operations</Link><Link to="/gallery">Gallery</Link><Link to="/awards">Awards</Link><Link to="/contact">Contact</Link></div>
         <div><span className="footer-label">CONTACT</span><a href={`mailto:${company.email}`}>{company.email}</a><a href={`tel:${company.phones[0].replace(/\s/g, '')}`}>{company.phones[0]}</a><p>{company.address[0]}<br />{company.address[1]}</p></div>
       </div>
-      <div className="container footer-bottom"><span>© {new Date().getFullYear()} KKGT Import Export</span><span>Quality · Integrity · Innovation</span></div>
+      <div className="container footer-bottom"><span>© {new Date().getFullYear()} KKGT Import Export</span><span>Quality · Integrity · Innovation</span><span className="developer-credit">Designed &amp; developed by <a href="https://admakidigital.com" target="_blank" rel="nofollow noopener noreferrer">ADMAKI Digital</a></span></div>
     </footer>
   );
 }

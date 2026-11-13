@@ -44,3 +44,6 @@
 @media(max-width:500px){.product-grid{grid-template-columns:1fr}.home-hero__media{background-position:62% center}.business-card-grid{grid-template-columns:1fr}.not-found__content{padding-top:100px}.inquiry-form{padding:20px}}
 
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}.image-link-card:hover .image-link-card__media,.origin-card:hover .origin-card__media,.commodity-card:hover .commodity-card__media{transform:none}}
+
+/* Discreet studio credit, matching the existing footer. */
+.footer-bottom{flex-wrap:wrap;gap:12px 24px}.developer-credit a{color:inherit;text-decoration:underline;text-underline-offset:3px}.developer-credit a:hover{color:#fff}.developer-credit a:focus-visible{outline:2px solid currentColor;outline-offset:4px}
